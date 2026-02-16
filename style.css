@@ -175,3 +175,27 @@ button {
     font-size: 18px;
     padding: 14px 28px;
 }
+
+html {
+    font-size: 18px;
+}
+
+body {
+    font-size: 1.1rem;
+}
+
+section p {
+    font-size: 1.2rem;
+}
+
+section h2 {
+    font-size: 2rem;
+}
+
+nav a {
+    font-size: 1.2rem;
+}
+
+#subtitle {
+    font-size: 1.3rem;
+}
