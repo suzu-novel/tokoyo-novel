@@ -256,3 +256,20 @@ header {
     text-align: center;
     width: 100%;
 }
+
+/* ===== タイトル画面を画面サイズに合わせる ===== */
+header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 0;
+}
+
+/* ロゴサイズ微調整 */
+#logo {
+    width: 65%;
+    max-width: 500px;
+}
