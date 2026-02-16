@@ -152,12 +152,13 @@ nav a {
 section {
     width: 100%;
     max-width: none;
-    margin: 80px auto;
-    padding: 60px 5%;
+    margin: 100px 0;
+    padding: 80px 8%;
 
-    border: 1px solid rgba(255,255,255,0.08);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+
     background: rgba(5, 8, 20, 0.75);
-
     backdrop-filter: blur(6px);
 }
 
@@ -221,9 +222,9 @@ nav a {
 }
 
 section h2 {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
 }
 
 section p {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 }
