@@ -21,16 +21,14 @@ body {
 
 /* ヘッダー */
 header {
-    padding-top: 80px;
-    padding-bottom: 40px;
+    text-align: center;
+    margin-top: 15vh;
 }
 
 /* ロゴ */
-.logo {
-    width: 400px;
-    max-width: 90%;
-    display: block;
-    margin: 300px auto 20px auto;
+#logo {
+    width: 60%;
+    max-width: 700px;
 }
 
 /* サブタイトル */
@@ -61,9 +59,12 @@ nav a:hover {
 
 /* セクション */
 section {
-    margin: 100px auto;
-    max-width: 700px;
-    padding: 0 20px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 30px;
+    border: 1px solid #222;
+    background: rgba(10,10,10,0.7);
 }
 
 section h2 {
