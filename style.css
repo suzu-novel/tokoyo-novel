@@ -241,3 +241,18 @@ section p {
 .character {
     text-align: center;
 }
+
+header {
+    text-align: center;
+}
+
+#logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#subtitle {
+    text-align: center;
+    width: 100%;
+}
