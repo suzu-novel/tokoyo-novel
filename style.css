@@ -126,3 +126,52 @@ footer {
     font-size: 12px;
     opacity: 0.6;
 }
+
+/* ===== 文字サイズ調整 ===== */
+
+/* ロゴ */
+#logo {
+    width: 80%;
+    max-width: 700px;
+    height: auto;
+}
+
+/* サブタイトル */
+#subtitle {
+    font-size: 22px;
+    margin-top: 20px;
+}
+
+/* ナビ */
+nav a {
+    font-size: 20px;
+    margin: 0 20px;
+}
+
+/* セクション幅 */
+section {
+    max-width: 900px;
+    width: 90%;
+}
+
+/* セクションタイトル */
+section h2 {
+    font-size: 32px;
+}
+
+/* 本文 */
+section p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* キャラ名 */
+.character h3 {
+    font-size: 24px;
+}
+
+/* ボタン */
+button {
+    font-size: 18px;
+    padding: 14px 28px;
+}
