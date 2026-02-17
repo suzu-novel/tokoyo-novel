@@ -1,18 +1,20 @@
-function playSound() {
-    const bell = document.getElementById("bell");
-    bell.play();
-}
+window.addEventListener("DOMContentLoaded", () => {
 
-const logoArea = document.getElementById("logo-area");
-const menuArea = document.getElementById("menu-area");
-const titleScreen = document.getElementById("title-screen");
+    const logoArea = document.getElementById("logo-area");
+    const menuArea = document.getElementById("menu-area");
+    const titleScreen = document.getElementById("title-screen");
 
-logoArea.addEventListener("click", () => {
+    logoArea.addEventListener("click", () => {
 
-    menuArea.classList.add("show");
+        // メニュー表示
+        menuArea.classList.add("show");
 
-    setTimeout(() => {
-        titleScreen.style.display = "none"; // ← 完全に消す
-    }, 1200);
+        // タイトル画面を完全削除
+        setTimeout(() => {
+            titleScreen.remove();
+            document.body.style.overflow = "auto";
+        }, 1200);
+
+    });
 
 });
