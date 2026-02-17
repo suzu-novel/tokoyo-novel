@@ -11,3 +11,14 @@ setTimeout(() => {
     title.style.transition = "opacity 3s";
     title.style.opacity = 1;
 }, 500);
+
+window.addEventListener("load", () => {
+
+    const logoArea = document.getElementById("logo-area");
+    const menuArea = document.getElementById("menu-area");
+
+    logoArea.addEventListener("click", () => {
+        menuArea.classList.add("show");
+    });
+
+});
