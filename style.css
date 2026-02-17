@@ -244,3 +244,13 @@ footer {
 body {
     overflow: hidden;
 }
+
+/* タイトル削除後の正常状態 */
+#title-screen.hide {
+    display: none;
+}
+
+/* 初期状態はスクロール禁止 */
+body {
+    overflow: hidden;
+}
