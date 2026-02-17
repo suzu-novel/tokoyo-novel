@@ -9,11 +9,11 @@ window.addEventListener("DOMContentLoaded", () => {
         // メニュー表示
         menuArea.classList.add("show");
 
-        // タイトル画面を消す
+        // タイトル削除
         titleScreen.classList.add("hide");
 
-        // スクロール許可
-        document.body.style.overflow = "auto";
+        // overflow強制解除（!important対策）
+        document.body.style.setProperty("overflow", "auto", "important");
 
     });
 
