@@ -510,3 +510,50 @@ body.lock {
 #logo-area {
     cursor: pointer;
 }
+
+/* ===== タイトル画面最終修正版 ===== */
+
+/* 最初はスクロール禁止 */
+body {
+    overflow: hidden;
+}
+
+/* タイトル画面固定 */
+#title-screen {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    z-index: 9999;
+}
+
+/* メニュー完全非表示 */
+#menu-area {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 2s ease;
+}
+
+/* 表示 */
+#menu-area.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* タイトル解除 */
+#title-screen.hide {
+    position: relative !important;
+    height: auto !important;
+}
+
+/* 解除後スクロール可能 */
+body.unlock {
+    overflow: auto;
+}
