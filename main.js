@@ -16,9 +16,16 @@ window.addEventListener("load", () => {
 
     const logoArea = document.getElementById("logo-area");
     const menuArea = document.getElementById("menu-area");
+    const titleScreen = document.getElementById("title-screen");
 
     logoArea.addEventListener("click", () => {
+
+        // メニュー表示
         menuArea.classList.add("show");
+
+        // タイトル画面を通常ページに戻す
+        titleScreen.classList.add("hide");
+
     });
 
 });
