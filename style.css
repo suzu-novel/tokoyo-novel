@@ -366,3 +366,28 @@ nav a {
     width: 90% !important;
     max-width: 320px !important;
 }
+
+/* タイトル画面をちゃんと1画面に収める */
+header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* STORYセクションの上余白を減らす */
+#story {
+    margin-top: 40px !important;
+    padding-top: 40px !important;
+}
+
+/* STORY見出しを少し小さく */
+#story h2 {
+    font-size: 24px !important;
+}
+
+/* STORY本文を軽くする */
+#story p {
+    font-size: 15px !important;
+    line-height: 1.7;
+}
