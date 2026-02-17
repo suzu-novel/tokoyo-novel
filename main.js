@@ -12,7 +12,7 @@ logoArea.addEventListener("click", () => {
     menuArea.classList.add("show");
 
     setTimeout(() => {
-        titleScreen.classList.add("hide");
-    }, 800);
+        titleScreen.style.display = "none"; // ← 完全に消す
+    }, 1200);
 
 });
