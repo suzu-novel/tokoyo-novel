@@ -1,10 +1,8 @@
-// 鈴の音
 function playSound() {
     const bell = document.getElementById("bell");
     bell.play();
 }
 
-// タイトル画面クリックでメニュー表示
 window.addEventListener("load", () => {
 
     const logoArea = document.getElementById("logo-area");
@@ -15,6 +13,8 @@ window.addEventListener("load", () => {
 
         menuArea.classList.add("show");
         titleScreen.classList.add("hide");
+
+        document.body.classList.add("unlock");
 
     });
 
