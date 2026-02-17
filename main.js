@@ -6,12 +6,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
     logoArea.addEventListener("click", () => {
 
-        // メニュー表示
         menuArea.classList.add("show");
 
-        // タイトル画面を完全削除
         setTimeout(() => {
-            titleScreen.remove();
+            titleScreen.classList.add("hide");
             document.body.style.overflow = "auto";
         }, 1200);
 
