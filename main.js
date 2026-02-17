@@ -3,19 +3,16 @@ function playSound() {
     bell.play();
 }
 
-window.addEventListener("load", () => {
+const logoArea = document.getElementById("logo-area");
+const menuArea = document.getElementById("menu-area");
+const titleScreen = document.getElementById("title-screen");
 
-    const logoArea = document.getElementById("logo-area");
-    const menuArea = document.getElementById("menu-area");
-    const titleScreen = document.getElementById("title-screen");
+logoArea.addEventListener("click", () => {
 
-    logoArea.addEventListener("click", () => {
+    menuArea.classList.add("show");
 
-        menuArea.classList.add("show");
+    setTimeout(() => {
         titleScreen.classList.add("hide");
-
-        document.body.classList.add("unlock");
-
-    });
+    }, 800);
 
 });
