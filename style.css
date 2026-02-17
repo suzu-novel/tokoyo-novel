@@ -405,3 +405,29 @@ nav {
     margin-top: 30px;
     letter-spacing: 3px;
 }
+
+/* タイトル画面 */
+#title-screen {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 最初はメニューを隠す */
+#menu-area {
+    opacity: 0;
+    transition: opacity 1.5s ease;
+    margin-top: 40px;
+}
+
+/* タップ後に表示 */
+#menu-area.show {
+    opacity: 1;
+}
+
+/* タップできることを示す */
+#logo-area {
+    cursor: pointer;
+}
