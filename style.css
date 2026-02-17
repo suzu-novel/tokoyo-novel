@@ -469,3 +469,44 @@ nav {
 body.lock {
     overflow: hidden;
 }
+
+/* タイトル画面を画面全体に固定 */
+#title-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background: transparent;
+    z-index: 9999;
+}
+
+/* 最初はメニュー非表示 */
+#menu-area {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 2s ease;
+}
+
+/* クリック後に表示 */
+#menu-area.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* タイトル画面を通常状態に戻す */
+#title-screen.hide {
+    position: relative;
+    height: auto;
+}
+
+/* ロゴクリックできるように */
+#logo-area {
+    cursor: pointer;
+}
