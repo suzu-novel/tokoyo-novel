@@ -391,3 +391,17 @@ header {
     font-size: 15px !important;
     line-height: 1.7;
 }
+
+.logo {
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+#subtitle {
+    opacity: 0.75;
+}
+
+nav {
+    margin-top: 30px;
+    letter-spacing: 3px;
+}
