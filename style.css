@@ -464,3 +464,8 @@ nav {
     position: relative;
     height: auto;
 }
+
+/* 最初はスクロール禁止 */
+body.lock {
+    overflow: hidden;
+}
