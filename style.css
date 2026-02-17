@@ -1,4 +1,4 @@
-/* 全体設定 */
+/* ===== 全体設定 ===== */
 body {
     margin: 0;
     padding: 0;
@@ -15,9 +15,12 @@ body {
     );
 
     min-height: 100vh;
+
+    /* 最初はスクロール禁止 */
+    overflow: hidden;
 }
 
-/* ほんのり暗いフィルター */
+/* 背景フィルター */
 #overlay {
     position: fixed;
     top: 0;
@@ -28,517 +31,43 @@ body {
     z-index: -1;
 }
 
-/* ヘッダー */
-header {
-    text-align: center;
-    margin-top: 15vh;
+
+/* ===== タイトル画面 ===== */
+
+#title-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    z-index: 9999;
 }
-
-/* ロゴ */
-#logo {
-    width: 75%;
-    max-width: 800px;
-    margin: 0 auto 30px auto;
-    display: block;
-}
-
-/* サブタイトル */
-#subtitle {
-    font-size: 18px;
-    letter-spacing: 2px;
-    opacity: 0.8;
-}
-
-/* ナビ */
-nav {
-    margin: 40px 0;
-}
-
-nav a {
-    color: #cfcfff;
-    text-decoration: none;
-    margin: 0 20px;
-    font-size: 14px;
-    letter-spacing: 2px;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: #ffffff;
-    text-shadow: 0 0 8px #8888ff;
-}
-
-/* セクション */
-section {
-    width: 92%;
-    max-width: 900px;
-    margin: 80px auto;
-    padding: 40px;
-
-    border: 1px solid rgba(255,255,255,0.08);
-    background: rgba(5, 8, 20, 0.75);
-
-    backdrop-filter: blur(6px);
-}
-
-section h2 {
-    font-size: 22px;
-    letter-spacing: 3px;
-    margin-bottom: 30px;
-}
-
-section p {
-    line-height: 1.8;
-    font-size: 15px;
-    opacity: 0.9;
-}
-
-/* キャラクター */
-.character {
-    margin-bottom: 40px;
-}
-
-.character h3 {
-    margin-bottom: 10px;
-    font-size: 18px;
-}
-
-/* ボタン */
-button {
-    background-color: transparent;
-    border: 1px solid #8888ff;
-    color: #e8e8f0;
-    padding: 10px 30px;
-    font-size: 14px;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    background-color: #8888ff;
-    color: #0b0f1a;
-}
-
-/* フッター */
-footer {
-    margin: 80px 0 40px 0;
-    font-size: 12px;
-    opacity: 0.6;
-}
-
-/* ===== 文字サイズ調整 ===== */
 
 /* ロゴ */
 #logo {
     width: 80%;
-    max-width: 700px;
-    height: auto;
-}
-
-/* サブタイトル */
-#subtitle {
-    font-size: 22px;
-    margin-top: 20px;
-}
-
-/* ナビ */
-nav a {
-    font-size: 20px;
-    margin: 0 20px;
-}
-
-/* セクション幅 */
-section {
-    width: 100%;
-    max-width: none;
-    margin: 100px 0;
-    padding: 80px 8%;
-
-    border-top: 1px solid rgba(255,255,255,0.08);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-
-    background: rgba(5, 8, 20, 0.75);
-    backdrop-filter: blur(6px);
-}
-
-/* セクションタイトル */
-section h2 {
-    font-size: 32px;
-}
-
-/* 本文 */
-section p {
-    font-size: 18px;
-    line-height: 1.8;
-}
-
-/* キャラ名 */
-.character h3 {
-    font-size: 24px;
-}
-
-/* ボタン */
-button {
-    font-size: 18px;
-    padding: 14px 28px;
-}
-
-html {
-    font-size: 18px;
-}
-
-body {
-    font-size: 1.1rem;
-}
-
-section p {
-    font-size: 1.2rem;
-}
-
-section h2 {
-    font-size: 2rem;
-}
-
-nav a {
-    font-size: 1.2rem;
-}
-
-#subtitle {
-    font-size: 1.3rem;
-}
-
-header {
-    margin-top: 20vh;
-}
-
-#logo {
-    width: 90%;
-    max-width: 1000px;
-}
-
-nav a {
-    font-size: 1.4rem;
-}
-
-section h2 {
-    font-size: 2.8rem;
-}
-
-section p {
-    font-size: 1.4rem;
-}
-section {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-
-section p {
-    text-align: center;
-}
-
-.character {
-    text-align: center;
-}
-
-header {
-    text-align: center;
-}
-
-#logo {
+    max-width: 400px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 }
 
-#subtitle {
-    text-align: center;
-    width: 100%;
+/* ロゴクリック可能 */
+#logo-area {
+    cursor: pointer;
 }
 
-/* ===== タイトル画面を画面サイズに合わせる ===== */
-header {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    margin-top: 0;
-}
-
-/* ロゴサイズ微調整 */
-#logo {
-    width: 65%;
-    max-width: 500px;
-}
-
-/* ===== スマホ用サイズ調整 ===== */
-@media screen and (max-width: 600px) {
-
-    html {
-        font-size: 14px;
-    }
-
-    header {
-        margin-top: 8vh;
-    }
-
-    #logo {
-        width: 90%;
-        max-width: 320px;
-    }
-
-    #subtitle {
-        font-size: 0.95rem;
-        padding: 0 15px;
-        line-height: 1.6;
-    }
-
-    nav a {
-        font-size: 0.9rem;
-        margin: 0 10px;
-    }
-
-    section {
-        padding: 20px 15px;
-        margin: 40px auto;
-    }
-
-    section h2 {
-        font-size: 1.3rem;
-    }
-
-    section p {
-    font-size: 14px !important;
-    line-height: 1.6;
-}
-
-    .character h3 {
-        font-size: 1.05rem;
-    }
-
-    button {
-        font-size: 0.9rem;
-        padding: 10px 20px;
-    }
-
-}
-
-/* ===== 強制スマホ最適化 ===== */
-
-html {
-    font-size: 14px !important;
-}
-
-body {
-    font-size: 14px !important;
-}
-
-section {
-    width: 94% !important;
-    padding: 20px !important;
-}
-
-section h2 {
-    font-size: 20px !important;
-}
-
-section p {
-    font-size: 14px !important;
-    line-height: 1.6 !important;
-}
-
-.character h3 {
-    font-size: 16px !important;
-}
-
-nav a {
-    font-size: 14px !important;
-}
-
-#subtitle {
-    font-size: 14px !important;
-}
-
-#logo {
-    width: 90% !important;
-    max-width: 320px !important;
-}
-
-/* タイトル画面をちゃんと1画面に収める */
-header {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-/* STORYセクションの上余白を減らす */
-#story {
-    margin-top: 40px !important;
-    padding-top: 40px !important;
-}
-
-/* STORY見出しを少し小さく */
-#story h2 {
-    font-size: 24px !important;
-}
-
-/* STORY本文を軽くする */
-#story p {
-    font-size: 15px !important;
-    line-height: 1.7;
-}
-
-.logo {
-    margin-bottom: 20px;
-    margin-top: 40px;
-}
-
-#subtitle {
-    opacity: 0.75;
-}
-
-nav {
+/* メニュー（最初は非表示） */
+#menu-area {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 2s ease;
     margin-top: 30px;
-    letter-spacing: 3px;
-}
-
-/* タイトル画面 */
-#title-screen {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-/* 最初はメニューを隠す */
-#menu-area {
-    opacity: 0;
-    transition: opacity 1.5s ease;
-    margin-top: 40px;
-}
-
-/* タップ後に表示 */
-#menu-area.show {
-    opacity: 1;
-}
-
-/* タップできることを示す */
-#logo-area {
-    cursor: pointer;
-}
-
-/* タイトル画面を最初は固定 */
-#title-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: #0b0f1a;
-    z-index: 9999;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-/* メニュー非表示 */
-#menu-area {
-    opacity: 0;
-    transition: opacity 1.5s ease;
-}
-
-/* 表示 */
-#menu-area.show {
-    opacity: 1;
-}
-
-/* タイトル解除用 */
-#title-screen.hide {
-    position: relative;
-    height: auto;
-}
-
-/* 最初はスクロール禁止 */
-body.lock {
-    overflow: hidden;
-}
-
-/* タイトル画面を画面全体に固定 */
-#title-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    background: transparent;
-    z-index: 9999;
-}
-
-/* 最初はメニュー非表示 */
-#menu-area {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 2s ease;
-}
-
-/* クリック後に表示 */
-#menu-area.show {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-/* タイトル画面を通常状態に戻す */
-#title-screen.hide {
-    position: relative;
-    height: auto;
-}
-
-/* ロゴクリックできるように */
-#logo-area {
-    cursor: pointer;
-}
-
-/* ===== タイトル画面最終修正版 ===== */
-
-/* 最初はスクロール禁止 */
-body {
-    overflow: hidden;
-}
-
-/* タイトル画面固定 */
-#title-screen {
-    position: fixed !important;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    z-index: 9999;
-}
-
-/* メニュー完全非表示 */
-#menu-area {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 2s ease;
 }
 
 /* 表示 */
@@ -549,11 +78,121 @@ body {
 
 /* タイトル解除 */
 #title-screen.hide {
-    position: relative !important;
-    height: auto !important;
+    position: relative;
+    height: auto;
 }
 
-/* 解除後スクロール可能 */
+/* スクロール解除 */
 body.unlock {
     overflow: auto;
+}
+
+
+/* ===== サブタイトル ===== */
+
+#subtitle {
+    font-size: 16px;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+
+/* ===== ナビ ===== */
+
+nav a {
+    color: #cfcfff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+nav a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px #8888ff;
+}
+
+
+/* ===== セクション ===== */
+
+section {
+    width: 90%;
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 30px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(5, 8, 20, 0.75);
+    backdrop-filter: blur(6px);
+}
+
+section h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* ===== キャラクター ===== */
+
+.character {
+    margin-bottom: 30px;
+}
+
+.character h3 {
+    font-size: 18px;
+}
+
+
+/* ===== ボタン ===== */
+
+button {
+    background-color: transparent;
+    border: 1px solid #8888ff;
+    color: #e8e8f0;
+    padding: 10px 25px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #8888ff;
+    color: #0b0f1a;
+}
+
+
+/* ===== フッター ===== */
+
+footer {
+    margin: 60px 0 30px 0;
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+
+/* ===== スマホ対応 ===== */
+
+@media screen and (max-width: 600px) {
+
+    #logo {
+        max-width: 300px;
+    }
+
+    #subtitle {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
 }
