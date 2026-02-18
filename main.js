@@ -5,8 +5,14 @@ window.addEventListener("DOMContentLoaded", function () {
 
     logoArea.addEventListener("click", function () {
 
-        // タイトル画面を完全削除
-        titleScreen.remove();
+        // フェードアウト
+        titleScreen.style.opacity = "0";
+        titleScreen.style.pointerEvents = "none";
+
+        // 少し待ってから完全削除
+        setTimeout(function () {
+            titleScreen.remove();
+        }, 500);
 
         // スクロール解除
         document.body.style.overflow = "auto";
