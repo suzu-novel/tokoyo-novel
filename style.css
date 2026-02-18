@@ -298,3 +298,10 @@ body {
     50%  { opacity: 0.6; }
     100% { opacity: 1; }
 }
+
+.tap-hint {
+    font-size: 12px;
+    opacity: 0.5;
+    margin-top: 10px;
+    animation: gentleGlow 3s ease-in-out infinite;
+}
