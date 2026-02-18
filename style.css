@@ -383,3 +383,8 @@ body {
 
     animation: gentleGlow 2s ease-in-out infinite;
 }
+
+.tap-hint {
+    position: relative;
+    z-index: 10;
+}
