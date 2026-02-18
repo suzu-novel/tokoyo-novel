@@ -1,4 +1,5 @@
 /* ===== 全体設定 ===== */
+
 body {
     margin: 0;
     padding: 0;
@@ -16,162 +17,278 @@ body {
 
     min-height: 100vh;
 
-    /* 最初はスクロール禁止 */
+    /* 初期はスクロール禁止 */
     overflow: hidden;
 }
 
-/* 背景フィルター */
+
+/* 背景オーバーレイ */
+
 #overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at center, rgba(20,20,40,0.4), rgba(0,0,0,0.9));
+
+    background: radial-gradient(
+        circle at center,
+        rgba(20,20,40,0.4),
+        rgba(0,0,0,0.9)
+    );
+
     z-index: -1;
 }
+
 
 
 /* ===== タイトル画面 ===== */
 
 #title-screen {
-    position: relative;
+
+    position: fixed;
     top: 0;
     left: 0;
+
     width: 100%;
     height: 100vh;
 
+    background: #020817;
+
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 
     z-index: 9999;
 }
 
-/* ロゴ */
-#logo {
-    width: 80%;
-    max-width: 400px;
-    display: block;
-    margin: 0 auto;
-}
 
-/* ロゴクリック可能 */
+
+/* ===== ロゴエリア ===== */
+
 #logo-area {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     cursor: pointer;
 }
 
-/* メニュー（最初は非表示） */
+
+
+/* ロゴ */
+
+#logo {
+
+    width: 80%;
+    max-width: 400px;
+
+    animation: gentleGlow 3s ease-in-out infinite;
+}
+
+
+
+/* tap 表示 */
+
+.tap-hint {
+
+    margin-top: 14px;
+
+    font-size: 14px;
+    color: #cfcfff;
+
+    letter-spacing: 4px;
+
+    opacity: 0.7;
+
+    animation: gentleGlow 2s ease-in-out infinite;
+}
+
+
+
+/* 点滅アニメ */
+
+@keyframes gentleGlow {
+
+    0%   { opacity: 0.2; transform: translateY(0px); }
+    50%  { opacity: 0.9; transform: translateY(6px); }
+    100% { opacity: 0.2; transform: translateY(0px); }
+
+}
+
+
+
+/* ===== メニュー ===== */
+
 #menu-area {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 2s ease;
-    margin-top: 30px;
+
+    display: none;
+
+    margin-top: 40px;
+
+    animation: fadeIn 2s ease forwards;
 }
 
-/* 表示 */
+
 #menu-area.show {
-    opacity: 1;
-    pointer-events: auto;
+
+    display: block;
 }
 
-/* タイトル解除 */
-#title-screen.hide {
-    position: relative;
-    height: auto;
+
+
+/* メニュー表示アニメ */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
 }
 
-/* スクロール解除 */
-body.unlock {
-    overflow: auto;
-}
 
 
 /* ===== サブタイトル ===== */
 
 #subtitle {
+
     font-size: 16px;
     opacity: 0.8;
+
     margin-bottom: 20px;
 }
+
 
 
 /* ===== ナビ ===== */
 
 nav a {
+
     color: #cfcfff;
+
     text-decoration: none;
+
     margin: 0 15px;
+
     font-size: 14px;
+
     letter-spacing: 2px;
+
+    transition: 0.3s;
 }
 
+
 nav a:hover {
+
     color: #ffffff;
+
     text-shadow: 0 0 8px #8888ff;
 }
+
 
 
 /* ===== セクション ===== */
 
 section {
+
     width: 90%;
     max-width: 800px;
+
     margin: 60px auto;
+
     padding: 30px;
 
     border: 1px solid rgba(255,255,255,0.08);
+
     background: rgba(5, 8, 20, 0.75);
+
     backdrop-filter: blur(6px);
 }
 
+
+
 section h2 {
+
     font-size: 22px;
+
     margin-bottom: 20px;
 }
 
+
+
 section p {
+
     font-size: 15px;
+
     line-height: 1.7;
 }
+
 
 
 /* ===== キャラクター ===== */
 
 .character {
+
     margin-bottom: 30px;
 }
 
+
 .character h3 {
+
     font-size: 18px;
 }
+
 
 
 /* ===== ボタン ===== */
 
 button {
+
     background-color: transparent;
+
     border: 1px solid #8888ff;
+
     color: #e8e8f0;
+
     padding: 10px 25px;
+
     font-size: 14px;
+
     cursor: pointer;
+
+    transition: 0.3s;
 }
 
+
 button:hover {
+
     background-color: #8888ff;
+
     color: #0b0f1a;
 }
+
 
 
 /* ===== フッター ===== */
 
 footer {
+
     margin: 60px 0 30px 0;
+
     font-size: 12px;
+
     opacity: 0.6;
 }
+
 
 
 /* ===== スマホ対応 ===== */
@@ -179,7 +296,7 @@ footer {
 @media screen and (max-width: 600px) {
 
     #logo {
-        max-width: 300px;
+        max-width: 280px;
     }
 
     #subtitle {
@@ -195,201 +312,4 @@ footer {
         padding: 20px;
     }
 
-}
-
-/* メニューを完全に隠す */
-#menu-area {
-    opacity: 0;
-    pointer-events: none;
-
-    position: absolute;
-    top: 55%;              /* ロゴの下に配置 */
-    left: 50%;
-    transform: translate(-50%, 20px);
-
-    transition: opacity 1.5s ease, transform 1.5s ease;
-}
-
-/* 表示状態 */
-#menu-area.show {
-    opacity: 1;
-    pointer-events: auto;
-
-    transform: translate(-50%, 0);
-}
-
-#title-screen.hide {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 1.5s ease;
-}
-
-#title-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-
-    background: #020817;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    z-index: 999;
-}
-
-body {
-    overflow: hidden;
-}
-
-/* タイトル削除後の正常状態 */
-#title-screen.hide {
-    display: none;
-}
-
-/* 初期状態はスクロール禁止 */
-body {
-    overflow: hidden;
-}
-
-/* ===== 強制リセット（最優先） ===== */
-
-/* 最初はスクロール禁止 */
-body {
-    overflow: hidden !important;
-}
-
-/* タイトル画面を画面固定 */
-#title-screen {
-    position: fixed !important;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: #020817;
-    z-index: 9999;
-}
-
-/* メニューは完全に隠す */
-#menu-area {
-    display: none !important;
-}
-
-/* 表示用 */
-#menu-area.show {
-    display: block !important;
-}
-
-/* タイトルを完全に消す */
-#title-screen.hide {
-    display: none !important;
-}
-
-/* ロゴをゆっくり点滅 */
-#logo {
-    animation: gentleGlow 3s ease-in-out infinite;
-}
-
-@keyframes gentleGlow {
-    0%   { opacity: 1; }
-    50%  { opacity: 0.6; }
-    100% { opacity: 1; }
-}
-
-.tap-hint {
-    font-size: 12px;
-    opacity: 0.5;
-    margin-top: 10px;
-    animation: gentleGlow 3s ease-in-out infinite;
-}
-
-.tap-hint {
-    font-size: 14px;
-    opacity: 0.6;
-    margin-top: 14px;
-    letter-spacing: 3px;
-    color: #cfcfff;
-
-    animation: gentleGlow 2s ease-in-out infinite;
-}
-
-@keyframes gentleGlow {
-    0%   { opacity: 0.2; }
-    50%  { opacity: 0.8; }
-    100% { opacity: 0.2; }
-}
-
-.tap-hint {
-    display: block !important;
-    font-size: 14px;
-    color: #cfcfff;
-    margin-top: 16px;
-    letter-spacing: 4px;
-    opacity: 0.7;
-
-    animation: gentleGlow 2s ease-in-out infinite;
-}
-
-@keyframes gentleGlow {
-    0%   { opacity: 0.2; transform: translateY(0px); }
-    50%  { opacity: 0.9; transform: translateY(4px); }
-    100% { opacity: 0.2; transform: translateY(0px); }
-}
-
-#logo-area {
-    position: relative;
-}
-
-.tap-hint {
-    position: absolute;
-    top: 110%;
-    left: 50%;
-    transform: translateX(-50%);
-
-    font-size: 14px;
-    color: #cfcfff;
-    letter-spacing: 4px;
-    opacity: 0.7;
-
-    animation: gentleGlow 2s ease-in-out infinite;
-}
-
-@keyframes gentleGlow {
-    0%   { opacity: 0.2; transform: translate(-50%, 0px); }
-    50%  { opacity: 0.9; transform: translate(-50%, 6px); }
-    100% { opacity: 0.2; transform: translate(-50%, 0px); }
-}
-
-#logo-area {
-    position: relative;
-    display: inline-block; /* ← これが重要 */
-}
-
-.tap-hint {
-    position: absolute;
-    top: 100%;      /* 110% → 100%に変更 */
-    left: 50%;
-    transform: translateX(-50%);
-    
-    margin-top: 12px;  /* ← 余白で下げる */
-
-    font-size: 14px;
-    color: #cfcfff;
-    letter-spacing: 4px;
-    opacity: 0.7;
-
-    animation: gentleGlow 2s ease-in-out infinite;
-}
-
-.tap-hint {
-    position: relative;
-    z-index: 10;
-}
-
-#logo {
-    display: block;
-    margin: 0 auto;
 }
