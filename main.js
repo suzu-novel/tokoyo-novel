@@ -1,5 +1,3 @@
-alert("main.js 読み込まれた");
-
 window.addEventListener("DOMContentLoaded", function () {
 
     const logoArea = document.getElementById("logo-area");
@@ -7,10 +5,10 @@ window.addEventListener("DOMContentLoaded", function () {
 
     logoArea.addEventListener("click", function () {
 
-        alert("logo clicked");
+        // 完全に消す（最強）
+        titleScreen.style.display = "none";
 
-        titleScreen.remove();
-
+        // スクロール解除
         document.body.style.overflow = "auto";
 
     });
