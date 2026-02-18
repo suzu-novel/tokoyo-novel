@@ -305,3 +305,19 @@ body {
     margin-top: 10px;
     animation: gentleGlow 3s ease-in-out infinite;
 }
+
+.tap-hint {
+    font-size: 14px;
+    opacity: 0.6;
+    margin-top: 14px;
+    letter-spacing: 3px;
+    color: #cfcfff;
+
+    animation: gentleGlow 2s ease-in-out infinite;
+}
+
+@keyframes gentleGlow {
+    0%   { opacity: 0.2; }
+    50%  { opacity: 0.8; }
+    100% { opacity: 0.2; }
+}
