@@ -1,19 +1,15 @@
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", function () {
 
     const logoArea = document.getElementById("logo-area");
-    const menuArea = document.getElementById("menu-area");
     const titleScreen = document.getElementById("title-screen");
 
-    logoArea.addEventListener("click", () => {
+    logoArea.addEventListener("click", function () {
 
-        // メニュー表示
-        menuArea.classList.add("show");
+        // タイトル画面を完全削除
+        titleScreen.remove();
 
         // スクロール解除
         document.body.style.overflow = "auto";
-
-        // タイトル画面を完全削除（←これが重要）
-        titleScreen.remove();
 
     });
 
