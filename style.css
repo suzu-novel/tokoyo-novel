@@ -313,3 +313,20 @@ footer {
     }
 
 }
+
+#title-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#logo-area {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#logo {
+    margin: 0 auto;
+}
