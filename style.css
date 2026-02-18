@@ -1,8 +1,11 @@
-/* ===== 全体設定 ===== */
+/* =================================
+   全体設定
+================================= */
 
 body {
     margin: 0;
     padding: 0;
+
     font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
     color: #e8e8f0;
     text-align: center;
@@ -17,19 +20,18 @@ body {
 
     min-height: 100vh;
 
-    /* 初期はスクロール禁止 */
+    /* 初期スクロール禁止（JSで解除可能） */
     overflow: hidden;
 }
 
 
-/* 背景オーバーレイ */
+/* =================================
+   背景オーバーレイ
+================================= */
 
 #overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
 
     background: radial-gradient(
         circle at center,
@@ -41,17 +43,14 @@ body {
 }
 
 
-
-/* ===== タイトル画面 ===== */
+/* =================================
+   タイトル画面
+================================= */
 
 #title-screen {
 
     position: fixed;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100vh;
+    inset: 0;
 
     background: #020817;
 
@@ -64,10 +63,13 @@ body {
 }
 
 
-
-/* ===== ロゴエリア ===== */
+/* =================================
+   ロゴエリア
+================================= */
 
 #logo-area {
+
+    width: 100%;
 
     display: flex;
     flex-direction: column;
@@ -77,24 +79,22 @@ body {
 }
 
 
-
 /* ロゴ */
 
 #logo {
 
-    width: 80%;
+    width: 100%;
     max-width: 400px;
 
     animation: gentleGlow 3s ease-in-out infinite;
 }
 
 
-
 /* tap 表示 */
 
 .tap-hint {
 
-    margin-top: 14px;
+    margin-top: 16px;
 
     font-size: 14px;
     color: #cfcfff;
@@ -107,20 +107,30 @@ body {
 }
 
 
-
 /* 点滅アニメ */
 
 @keyframes gentleGlow {
 
-    0%   { opacity: 0.2; transform: translateY(0px); }
-    50%  { opacity: 0.9; transform: translateY(6px); }
-    100% { opacity: 0.2; transform: translateY(0px); }
+    0%   {
+        opacity: 0.2;
+        transform: translateY(0);
+    }
 
+    50%  {
+        opacity: 0.9;
+        transform: translateY(6px);
+    }
+
+    100% {
+        opacity: 0.2;
+        transform: translateY(0);
+    }
 }
 
 
-
-/* ===== メニュー ===== */
+/* =================================
+   メニュー
+================================= */
 
 #menu-area {
 
@@ -128,18 +138,17 @@ body {
 
     margin-top: 40px;
 
-    animation: fadeIn 2s ease forwards;
+    opacity: 0;
 }
 
 
 #menu-area.show {
 
     display: block;
+
+    animation: fadeIn 2s ease forwards;
 }
 
-
-
-/* メニュー表示アニメ */
 
 @keyframes fadeIn {
 
@@ -152,24 +161,26 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
-
 }
 
 
-
-/* ===== サブタイトル ===== */
+/* =================================
+   サブタイトル
+================================= */
 
 #subtitle {
 
     font-size: 16px;
+
     opacity: 0.8;
 
     margin-bottom: 20px;
 }
 
 
-
-/* ===== ナビ ===== */
+/* =================================
+   ナビゲーション
+================================= */
 
 nav a {
 
@@ -195,8 +206,9 @@ nav a:hover {
 }
 
 
-
-/* ===== セクション ===== */
+/* =================================
+   セクション
+================================= */
 
 section {
 
@@ -215,14 +227,12 @@ section {
 }
 
 
-
 section h2 {
 
     font-size: 22px;
 
     margin-bottom: 20px;
 }
-
 
 
 section p {
@@ -233,8 +243,9 @@ section p {
 }
 
 
-
-/* ===== キャラクター ===== */
+/* =================================
+   キャラクター
+================================= */
 
 .character {
 
@@ -248,12 +259,13 @@ section p {
 }
 
 
-
-/* ===== ボタン ===== */
+/* =================================
+   ボタン
+================================= */
 
 button {
 
-    background-color: transparent;
+    background: transparent;
 
     border: 1px solid #8888ff;
 
@@ -271,18 +283,19 @@ button {
 
 button:hover {
 
-    background-color: #8888ff;
+    background: #8888ff;
 
     color: #0b0f1a;
 }
 
 
-
-/* ===== フッター ===== */
+/* =================================
+   フッター
+================================= */
 
 footer {
 
-    margin: 60px 0 30px 0;
+    margin: 60px 0 30px;
 
     font-size: 12px;
 
@@ -290,8 +303,9 @@ footer {
 }
 
 
-
-/* ===== スマホ対応 ===== */
+/* =================================
+   スマホ対応
+================================= */
 
 @media screen and (max-width: 600px) {
 
@@ -311,22 +325,4 @@ footer {
     section {
         padding: 20px;
     }
-
-}
-
-#title-screen {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-#logo-area {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-#logo {
-    margin: 0 auto;
 }
