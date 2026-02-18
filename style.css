@@ -331,3 +331,7 @@ footer {
         padding: 20px;
     }
 }
+
+#title-screen {
+    transition: opacity 0.5s ease;
+}
