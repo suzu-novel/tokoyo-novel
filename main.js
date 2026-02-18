@@ -5,7 +5,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
     logoArea.addEventListener("click", function () {
 
-        // 完全に消す（最強）
+        // 完全に消す
         titleScreen.style.display = "none";
 
         // スクロール解除
