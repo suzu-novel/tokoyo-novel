@@ -362,3 +362,24 @@ body {
     50%  { opacity: 0.9; transform: translate(-50%, 6px); }
     100% { opacity: 0.2; transform: translate(-50%, 0px); }
 }
+
+#logo-area {
+    position: relative;
+    display: inline-block; /* ← これが重要 */
+}
+
+.tap-hint {
+    position: absolute;
+    top: 100%;      /* 110% → 100%に変更 */
+    left: 50%;
+    transform: translateX(-50%);
+    
+    margin-top: 12px;  /* ← 余白で下げる */
+
+    font-size: 14px;
+    color: #cfcfff;
+    letter-spacing: 4px;
+    opacity: 0.7;
+
+    animation: gentleGlow 2s ease-in-out infinite;
+}
