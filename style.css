@@ -5,7 +5,6 @@
 body {
     margin: 0;
     padding: 0;
-
     font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
     color: #e8e8f0;
     text-align: center;
@@ -19,9 +18,7 @@ body {
     );
 
     min-height: 100vh;
-
-    /* 初期スクロール禁止（JSで解除可能） */
-    overflow: hidden;
+    overflow: hidden; /* 初期スクロール禁止 */
 }
 
 
@@ -32,13 +29,11 @@ body {
 #overlay {
     position: fixed;
     inset: 0;
-
     background: radial-gradient(
         circle at center,
         rgba(20,20,40,0.4),
         rgba(0,0,0,0.9)
     );
-
     z-index: -1;
 }
 
@@ -48,10 +43,8 @@ body {
 ================================= */
 
 #title-screen {
-
     position: fixed;
     inset: 0;
-
     background: #020817;
 
     display: flex;
@@ -62,110 +55,55 @@ body {
     z-index: 9999;
 }
 
-#title-screen.hide {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 1s ease;
-}
 
 /* =================================
    ロゴエリア
 ================================= */
 
 #logo-area {
-
     width: 100%;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-
     cursor: pointer;
 }
 
-
-/* ロゴ */
-
 #logo {
-
     width: 100%;
     max-width: 400px;
-
     animation: gentleGlow 3s ease-in-out infinite;
 }
 
-
-/* tap 表示 */
-
 .tap-hint {
-
     margin-top: 16px;
-
     font-size: 14px;
     color: #cfcfff;
-
     letter-spacing: 4px;
-
     opacity: 0.7;
-
     animation: gentleGlow 2s ease-in-out infinite;
 }
 
-
-/* 点滅アニメ */
-
 @keyframes gentleGlow {
-
-    0%   {
-        opacity: 0.2;
-        transform: translateY(0);
-    }
-
-    50%  {
-        opacity: 0.9;
-        transform: translateY(6px);
-    }
-
-    100% {
-        opacity: 0.2;
-        transform: translateY(0);
-    }
+    0% { opacity: 0.2; transform: translateY(0); }
+    50% { opacity: 0.9; transform: translateY(6px); }
+    100% { opacity: 0.2; transform: translateY(0); }
 }
 
 
 /* =================================
-   メニュー
+   メニュー（修正版）
 ================================= */
 
 #menu-area {
-
-    display: none;
-
     margin-top: 40px;
-
     opacity: 0;
+    pointer-events: none;
+    transition: opacity 1.2s ease;
 }
-
 
 #menu-area.show {
-
-    display: block;
-
-    animation: fadeIn 2s ease forwards;
-}
-
-
-@keyframes fadeIn {
-
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    opacity: 1;
+    pointer-events: auto;
 }
 
 
@@ -174,11 +112,8 @@ body {
 ================================= */
 
 #subtitle {
-
     font-size: 16px;
-
     opacity: 0.8;
-
     margin-bottom: 20px;
 }
 
@@ -188,25 +123,16 @@ body {
 ================================= */
 
 nav a {
-
     color: #cfcfff;
-
     text-decoration: none;
-
     margin: 0 15px;
-
     font-size: 14px;
-
     letter-spacing: 2px;
-
     transition: 0.3s;
 }
 
-
 nav a:hover {
-
     color: #ffffff;
-
     text-shadow: 0 0 8px #8888ff;
 }
 
@@ -216,34 +142,23 @@ nav a:hover {
 ================================= */
 
 section {
-
     width: 90%;
     max-width: 800px;
-
     margin: 60px auto;
-
     padding: 30px;
 
     border: 1px solid rgba(255,255,255,0.08);
-
     background: rgba(5, 8, 20, 0.75);
-
     backdrop-filter: blur(6px);
 }
 
-
 section h2 {
-
     font-size: 22px;
-
     margin-bottom: 20px;
 }
 
-
 section p {
-
     font-size: 15px;
-
     line-height: 1.7;
 }
 
@@ -253,13 +168,10 @@ section p {
 ================================= */
 
 .character {
-
     margin-bottom: 30px;
 }
 
-
 .character h3 {
-
     font-size: 18px;
 }
 
@@ -269,27 +181,17 @@ section p {
 ================================= */
 
 button {
-
     background: transparent;
-
     border: 1px solid #8888ff;
-
     color: #e8e8f0;
-
     padding: 10px 25px;
-
     font-size: 14px;
-
     cursor: pointer;
-
     transition: 0.3s;
 }
 
-
 button:hover {
-
     background: #8888ff;
-
     color: #0b0f1a;
 }
 
@@ -299,12 +201,29 @@ button:hover {
 ================================= */
 
 footer {
-
     margin: 60px 0 30px;
-
     font-size: 12px;
-
     opacity: 0.6;
+}
+
+
+/* =================================
+   固定ナビ
+================================= */
+
+.global-nav {
+    position: sticky;
+    top: 0;
+    background: rgba(5, 8, 20, 0.9);
+    padding: 15px 0;
+    z-index: 1000;
+}
+
+.global-nav a {
+    color: #cfcfff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 14px;
 }
 
 
@@ -330,23 +249,4 @@ footer {
     section {
         padding: 20px;
     }
-}
-
-#title-screen {
-    transition: opacity 0.5s ease;
-}
-
-.global-nav {
-    position: sticky;
-    top: 0;
-    background: rgba(5, 8, 20, 0.9);
-    padding: 15px 0;
-    z-index: 1000;
-}
-
-.global-nav a {
-    color: #cfcfff;
-    margin: 0 15px;
-    text-decoration: none;
-    font-size: 14px;
 }
