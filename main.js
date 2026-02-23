@@ -6,13 +6,8 @@ window.addEventListener("DOMContentLoaded", function () {
 
     logoArea.addEventListener("click", function () {
 
-        // タイトル消す
-        titleScreen.style.display = "none";
-
-        // メニュー表示
-        menuArea.classList.add("show");
-
-        // スクロール解除
+        titleScreen.remove();          // タイトル完全削除
+        menuArea.classList.add("show"); // メニュー表示
         document.body.style.overflow = "auto";
 
     });
